@@ -19,6 +19,7 @@
 #include <iostream>
 #include <iomanip>
 #include <array>
+#include <fmt/ostream.h>
 
 namespace eprosima {
 namespace uxr {
@@ -82,5 +83,7 @@ private:
 
 } // namespace uxr
 } // namespace eprosima
+
+template <> struct fmt::formatter<eprosima::uxr::IPv6EndPoint> : ostream_formatter {};
 
 #endif // UXR_AGENT_TRANSPORT_ENDPOINT_IPV6_ENDPOINT_HPP_

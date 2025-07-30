@@ -18,6 +18,7 @@
 #include <map>
 #include <memory>
 #include <sstream>
+#include <fmt/ostream.h>
 
 namespace eprosima {
 namespace uxr {
@@ -503,5 +504,7 @@ inline bool CustomEndPoint::add_member<std::string>(
 
 } // namespace uxr
 } // namespace eprosima
+
+template <> struct fmt::formatter<eprosima::uxr::CustomEndPoint> : ostream_formatter {};
 
 #endif // UXR_AGENT_TRANSPORT_ENDPOINT_IPV4_ENDPOINT_HPP_
