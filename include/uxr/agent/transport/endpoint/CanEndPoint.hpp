@@ -16,6 +16,7 @@
 #define _UXR_AGENT_TRANSPORT_CAN_ENDPOINT_HPP_
 
 #include <stdint.h>
+#include <fmt/ostream.h>
 
 namespace eprosima {
 namespace uxr {
@@ -51,5 +52,7 @@ private:
 
 } // namespace uxr
 } // namespace eprosima
+
+template <> struct fmt::formatter<eprosima::uxr::CanEndPoint> : ostream_formatter {};
 
 #endif //_UXR_AGENT_TRANSPORT_CAN_ENDPOINT_HPP_

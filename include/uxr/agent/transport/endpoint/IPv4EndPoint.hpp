@@ -1,6 +1,6 @@
 // Copyright 2019 Proyectos y Sistemas de Mantenimiento SL (eProsima).
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
+// Licensed under the Apache License, Version 2.0 (the "License);
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
@@ -17,6 +17,7 @@
 
 #include <stdint.h>
 #include <iostream>
+#include <fmt/ostream.h>
 
 namespace eprosima {
 namespace uxr {
@@ -61,5 +62,8 @@ private:
 
 } // namespace uxr
 } // namespace eprosima
+
+template <> struct fmt::formatter<eprosima::uxr::IPv4EndPoint> : ostream_formatter {};
+
 
 #endif // UXR_AGENT_TRANSPORT_ENDPOINT_IPV4_ENDPOINT_HPP_

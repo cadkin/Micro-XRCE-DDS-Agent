@@ -16,6 +16,7 @@
 #define _UXR_AGENT_TRANSPORT_MULTISERIAL_ENDPOINT_HPP_
 
 #include <stdint.h>
+#include <fmt/ostream.h>
 
 namespace eprosima {
 namespace uxr {
@@ -54,5 +55,7 @@ private:
 
 } // namespace uxr
 } // namespace eprosima
+
+template <> struct fmt::formatter<eprosima::uxr::MultiSerialEndPoint> : ostream_formatter {};
 
 #endif //_UXR_AGENT_TRANSPORT_SERIAL_ENDPOINT_HPP_

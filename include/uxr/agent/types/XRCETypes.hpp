@@ -30,6 +30,7 @@
 #include <vector>
 #include <iostream>
 #include <exception>
+#include <fmt/ostream.h>
 
 namespace eprosima { namespace fastcdr {
 
@@ -12101,5 +12102,7 @@ private:
 };
 
 } // namespace dds
+
+template <> struct fmt::formatter<dds::xrce::TransportAddress> : ostream_formatter {};
 
 #endif //_UXR_AGENT_TYPES_XRCETYPES_HPP_

@@ -24,6 +24,7 @@
 #include <fastcdr/FastBuffer.h>
 #include <fastcdr/Cdr.h>
 #include "../../xmlobjects/xmlobjects.h"
+#include "fmt/ostream.h"
 
 namespace eprosima {
 namespace uxr {
@@ -40,16 +41,16 @@ void FastListener::onParticipantDiscovery(
         UXR_AGENT_LOG_TRACE(
             UXR_DECORATE_WHITE("matched"),
             "entity_id: {}, guid_prefix: {}",
-            info.info.m_guid.entityId,
-            info.info.m_guid.guidPrefix);
+            fmt::streamed(info.info.m_guid.entityId),
+            fmt::streamed(info.info.m_guid.guidPrefix));
     }
     else
     {
         UXR_AGENT_LOG_TRACE(
             UXR_DECORATE_WHITE("unmatched"),
             "entity_id: {}, guid_prefix: {}",
-            info.info.m_guid.entityId,
-            info.info.m_guid.guidPrefix);
+            fmt::streamed(info.info.m_guid.entityId),
+            fmt::streamed(info.info.m_guid.guidPrefix));
     }
 }
 
@@ -62,16 +63,16 @@ void FastListener::onPublicationMatched(
         UXR_AGENT_LOG_TRACE(
             UXR_DECORATE_WHITE("matched"),
             "entity_id: {}, guid_prefix: {}",
-            info.remoteEndpointGuid.entityId,
-            info.remoteEndpointGuid.guidPrefix);
+            fmt::streamed(info.remoteEndpointGuid.entityId),
+            fmt::streamed(info.remoteEndpointGuid.guidPrefix));
     }
     else
     {
         UXR_AGENT_LOG_TRACE(
             UXR_DECORATE_WHITE("unmatched"),
             "entity_id: {}, guid_prefix: {}",
-            info.remoteEndpointGuid.entityId,
-            info.remoteEndpointGuid.guidPrefix);
+            fmt::streamed(info.remoteEndpointGuid.entityId),
+            fmt::streamed(info.remoteEndpointGuid.guidPrefix));
     }
 }
 
@@ -84,16 +85,16 @@ void FastListener::onSubscriptionMatched(
         UXR_AGENT_LOG_TRACE(
             UXR_DECORATE_WHITE("matched"),
             "entity_id: {}, guid_prefix: {}",
-            info.remoteEndpointGuid.entityId,
-            info.remoteEndpointGuid.guidPrefix);
+            fmt::streamed(info.remoteEndpointGuid.entityId),
+            fmt::streamed(info.remoteEndpointGuid.guidPrefix));
     }
     else
     {
         UXR_AGENT_LOG_TRACE(
             UXR_DECORATE_WHITE("unmatched"),
             "entity_id: {}, guid_prefix: {}",
-            info.remoteEndpointGuid.entityId,
-            info.remoteEndpointGuid.guidPrefix);
+            fmt::streamed(info.remoteEndpointGuid.entityId),
+            fmt::streamed(info.remoteEndpointGuid.guidPrefix));
     }
 }
 
